@@ -1,0 +1,146 @@
+body {
+    font-family: "Bebas Neue", cursive;
+    background: #F1FAF4;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+p {
+    font-size: 2em;
+}
+td, th {
+    font-size: 2em;
+    padding: 0.5em;
+    border: 1px solid black;
+    text-align: center;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.menu-title {
+    font-size: 50px;
+}
+
+.primary-btn {
+    background: #ABD1B5;
+    font-family: inherit;
+    color: black;
+    font-size: 40px;
+    border: none;
+    border-radius: 20px;
+    width: 400px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.primary-btn:hover {
+    transform: scale(1.1);
+    background: #7bac97;
+    color: black;
+}
+
+.secondary-btn {
+    background: #424B54;
+    color: white;
+    font-size: 35px;
+    border: none;
+    border-radius: 15px;
+    width: 380px;
+    height: 60px;
+    margin-top: 20px;
+}
+.secondary-btn:hover {
+    transform: scale(1.05);
+}
+
+.title {
+    font-size: 48px;
+    position: absolute;
+    top: 100px;
+}
+
+.mode-menu {
+    position: relative;
+    height: 100vh;
+    width:  100vw;
+}
+#classical {
+    display: none;
+}
+#classical-header {
+    position: absolute; 
+    display: none;  /* default is grid */ 
+    grid-template-columns: repeat(3, 1fr); 
+    width: 100vw;
+}
+#cheating {
+    margin-bottom: 20px;
+}
+
+#classical-stats {
+    display: flex;
+}
+#error-stat {
+    margin-left: 50px;
+}
+#classical-description {
+    text-align: center;
+}
+#remaining-stat {
+    margin-right:0px;
+    margin-left: auto;
+    width: fit-content;
+}
+#classical-countdown {
+    display: none;
+}
+#classical-end {
+    display: none;
+}
+
+.difficulty-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 30px;
+    width: 350px;
+}
+
+#target {
+    display: none;
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    background-color: #bbb;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 100;
+
+}
+
+#reaction {
+    display: none;
+}
+#reaction-header {
+    position: absolute;
+    width: 100vw;
+    display: none;
+}
+#reaction-header p{
+    text-align: center;
+}
+#reaction-end {
+    display: none;
+}
+
+#leaderboard {
+    display: none;
+}
+#leaderboard-title {
+    font-size: 50px;
+}

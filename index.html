@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Po-Yu Shih">
+    <title>Become an Aimbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <script src="game.js"></script>
+</head>
+<body>
+    <div class="menu" id="main-menu">
+        <p class="menu-title">Precision and Reaction Speed make an FPS player a PRO.</p>
+        <button class="game-mode primary-btn" id="classical-btn">Classical</button>
+        <button class="game-mode primary-btn" id="reaction-btn">Reaction Time</button>
+        <hr width="450px">
+        <button class="secondary-btn" id="leaderboard-btn">Leaderboard</button>
+    </div>
+    <div class="mode-menu" id="classical">
+        <div id="target"></div>
+        <div id="classical-header">
+            <div id="classical-stats">
+                <p>Score: <span id="score">0</span></p>
+                <p id="error-stat">Error Clicks: <span id="error-clicks">0</span></p>
+            </div>
+            <div id="classical-description">
+                <p id="classical-title">Try to click on every target.</p>
+                <p id="classical-countdown">3</p>
+            </div>
+            <div>
+                <p id="remaining-stat">Remaining: <span id="remaining">20</span></p>
+            </div>
+        </div>
+        <div class="menu" id="classical-menu">
+            <p class="title">Classical</p>
+            <fieldset class="difficulty-selection">
+                <legend>Difficulty</legend>
+                <div>
+                    <input type="radio" id="easy" name="difficulty" value="easy" checked>
+                    <label for="easy">Easy</label>
+                </div>
+                <div>
+                    <input type="radio" id="normal" name="difficulty" value="normal">
+                    <label for="normal">Normal</label>
+                </div>
+                <div>
+                    <input type="radio" id="hard" name="difficulty" value="hard">
+                    <label for="hard">Hard</label>
+                </div>
+            </fieldset>
+            <div>
+                <input type="checkbox" id="cheating" name="cheating">
+                <label for="cheating">Mom, this is too hard</label>
+            </div>
+            <button class="primary-btn" id="classical-start">Start</button>
+            <hr width="450px">
+            <button class="back-to-menu secondary-btn">Menu</button>
+        </div>
+        <div class="menu" id="classical-end">
+            <p>Score: <span id="classical-score">0</span></p>
+            <p>Error Clicks: <span id="classical-error-clicks">0</span></p>
+            <hr width="450px">
+            <button class="secondary-btn" id="back-to-classical">Back</button>
+        </div>
+    </div>
+    <div class="mode-menu" id="reaction">
+        <div id="reaction-header">
+            <div>
+                <p id="reaction-title">Click the screen once it turns green.</p>
+                <p id="reaction-countdown">3</p>
+            </div>
+        </div>
+        <div class="menu" id="reaction-menu">
+            <p class="title">Reaction Time</p>
+            <button class="primary-btn" id="reaction-start">Start</button>
+            <hr width="450px">
+            <button class="back-to-menu secondary-btn">Menu</button>
+        </div>
+        <div class="menu" id="reaction-end">
+            <p>Reaction Time: <span id="reaction-time">0</span> ms</p>
+            <hr width="450px">
+            <button class="secondary-btn" id="back-to-reaction">Back</button>
+        </div>
+    </div>
+    <div id="leaderboard">
+        <div class="menu">
+            <p id="leaderboard-title">Leaderboard</p>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Mode</th>
+                    <th colspan="3">Records</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="4">Classical</td>
+                    <td>Difficulty</td>
+                    <td>Score</td>
+                    <td>Error Clicks</td>
+                  </tr>
+                  <tr>
+                    <td>Easy</td>
+                    <td id="easy-score"></td>
+                    <td id="easy-error"></td>
+                  </tr>
+                  <tr>
+                    <td>Normal</td>
+                    <td id="normal-score"></td>
+                    <td id="normal-error"></td>
+                  </tr>
+                  <tr>
+                    <td>Hard</td>
+                    <td id="hard-score"></td>
+                    <td id="hard-error"></td>
+                  </tr>
+                  <tr>
+                    <td>Reaction Time</td>
+                    <td>Seconds</td>
+                    <td colspan="2" ><span id="fastest-reaction-time"></span> ms</td>
+                  </tr>
+                </tbody>
+                </table>
+            <button class="back-to-menu secondary-btn">Menu</button>
+        </div>
+    </div>
+</body>
+</html>
