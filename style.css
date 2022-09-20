@@ -120,7 +120,15 @@ td, th {
     border-radius: 50%;
     overflow: hidden;
     z-index: 100;
-
+    /* animation: move 1s linear forwards; */
+    
+}
+:root {
+    --dx: 0px;
+    --dy: 0px;
+}
+@keyframes move {
+    100%{ transform: translate(var(--dx), var(--dy));}
 }
 
 #reaction {

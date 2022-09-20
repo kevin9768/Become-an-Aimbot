@@ -118,6 +118,8 @@ const classicalGame = (difficulty) => {
 
     classicalStarted = true;
     let gameStart = setInterval(()=>{
+        target.style.display = 'none';
+        target.style.animation = '';
         if(parseInt(remaining.innerText) <= 0){
             classicalTitle.innerHTML = 'Game Over';
 
@@ -152,15 +154,14 @@ const classicalGame = (difficulty) => {
         }
         if(parseInt(remaining.innerText) > 0){
             remaining.innerText = parseInt(remaining.innerText) - 1;
-            targetRandomPos();
+            targetRandomPos(difficultyMode[difficulty].time);
         }
     }, difficultyMode[difficulty].time);
 }
-const targetRandomPos = () => {
+const targetRandomPos = (time) => {
     let scoreBounding = document.getElementById('score').getBoundingClientRect();
     let target = document.getElementById('target');
 
-    target.style.display = 'none';
     target.style.backgroundColor = '#bbb';
     let w = window.innerWidth;
     let h = window.innerHeight;
@@ -177,6 +178,9 @@ const targetRandomPos = () => {
     }
     else {
         target.style.transform = "";
+        document.documentElement.style.setProperty('--dx', Math.random() * (w-50) - newLeft+'px');
+        document.documentElement.style.setProperty('--dy', Math.random() * (h-50-scoreBounding.bottom) - newTop+'px');
+        target.style.animation = 'move ' + time/1000 + 's linear forwards';
     }
     target.style.display = 'block';
 }
